@@ -48,7 +48,7 @@ int main()
             
             int *pages_of_book= total_number_of_pages[x];
             
-            while(*pages_of_book != 0){
+            while(*pages_of_book != 0){       //reapeat until find last book-book with 0 pages
                 pages_of_book++;
             }
                 *pages_of_book=y;           
