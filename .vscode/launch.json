@@ -9,7 +9,7 @@
             "name": "(gdb) Launch",
             "type": "cppdbg",
             "request": "launch",
-            "program": "${workspaceFolder}/Tasks/students_marks_sum",
+            "program": "${workspaceFolder}/Tasks/${fileBasenameNoExtension}",
             "args": [],
             "stopAtEntry": false,
             "preLaunchTask": "C/C++: gcc build active file",
