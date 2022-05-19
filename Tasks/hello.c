@@ -1,4 +1,6 @@
 #include <stdio.h>
+#include "static.h"
+
 
 
 
@@ -8,14 +10,12 @@ static int add(const int aditiv){
   return a;
 }
 
+extern int number;
 
 int main(){
 
   
-  // int age;
-  // printf("Enter your age: ");
-  // scanf("%d",&age);
-  // printf("Your age is is %d\n", age);
+  printf("%d",number);
 
   printf("%d\n",add(1));
   printf("%d\n",add(1));
