@@ -1,1 +1,1 @@
-int number=7;
+extern int number;

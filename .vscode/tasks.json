@@ -9,8 +9,10 @@
 				"-g",
 				"-Wall",
 				"${file}",
+				"${fileDirname}/modul.c",
 				"-o",
 				"${fileDirname}/${fileBasenameNoExtension}",
+				
 				"-lm"
 			],
 			"options": {

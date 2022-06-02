@@ -11,7 +11,7 @@ int  sum (int count,...) {
     va_start(value_of_numbers, count);
     int sum_of_numbers=0;
     
-    for (int i=0; i<count; i++) {
+    for (int i=0; i<count+3; i++) {
         sum_of_numbers=sum_of_numbers + va_arg(value_of_numbers, int);
     }
     

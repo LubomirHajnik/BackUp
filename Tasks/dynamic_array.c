@@ -22,14 +22,15 @@ int main()
     int total_number_of_queries;
     scanf("%d", &total_number_of_queries);
     
-    total_number_of_books = calloc(total_number_of_shelves, sizeof(int));
     
-    total_number_of_pages = calloc(total_number_of_shelves, sizeof(int*));
+    total_number_of_books = (int*)malloc(total_number_of_shelves * sizeof(int));
+    
+    total_number_of_pages = (int**)malloc(total_number_of_shelves * sizeof(int*));
     
     
     for (int i = 0; i < total_number_of_shelves; i++)    {
-        total_number_of_pages[i] = calloc(1100, sizeof(int));
-    }
+        total_number_of_books[i]=0;
+    } 
     
     
     while (total_number_of_queries--) {
@@ -37,22 +38,38 @@ int main()
         scanf("%d", &type_of_query);
         
         if (type_of_query == 1) {
-            /*
-             * Process the query of first type here.
-             */
+            
                           
             int x, y;
             scanf("%d %d", &x, &y); //x=shelf,y==pages
             
-            total_number_of_books[x]++;
             
-            int *pages_of_book= total_number_of_pages[x];
+
             
-            while(*pages_of_book != 0){       //reapeat until find last book-book with 0 pages
+            if (total_number_of_books[x]==0) {
+
+                total_number_of_pages[x] = (int *) malloc(1 * sizeof(int));
+                
+            }
+            
+            else {
+                total_number_of_pages[x] = (int *) realloc(total_number_of_pages[x] , (total_number_of_books[x]+1) * sizeof(int));
+            }
+            
+            total_number_of_books[x]+=1;          
+            
+            
+            total_number_of_pages[x][total_number_of_books[x]-1] = y;
+
+            
+            
+            /* int *pages_of_book= total_number_of_pages[x];
+            
+            while(*pages_of_book != '\0'){
                 pages_of_book++;
             }
-                *pages_of_book=y;           
-
+                *pages_of_book=y;     
+ */
         } else if (type_of_query == 2) {
             int x, y;
             scanf("%d %d", &x, &y);

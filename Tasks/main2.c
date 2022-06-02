@@ -7,3 +7,5 @@ static int add(const int aditiv){
 int function_add(int x){
     return add(x);
 }
+
+int number=5;
